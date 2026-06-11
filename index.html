@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>city-slugs — every city, one slug</title>
+<meta name="description" content="Canonical URL-safe slugs for 233,819 cities and towns worldwide, on a map.">
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<style>
+  :root { color-scheme: dark; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body, #map { height: 100%; background: #0b0e18; }
+  body { font-family: ui-rounded, -apple-system, system-ui, sans-serif; }
+  .panel {
+    position: fixed; top: 14px; left: 14px; z-index: 10;
+    background: rgba(13, 17, 30, 0.88); backdrop-filter: blur(10px);
+    border: 1px solid #1e2438; border-radius: 14px; padding: 14px 16px;
+    color: #fff; max-width: 320px;
+  }
+  .panel h1 { font-size: 17px; font-weight: 700; }
+  .panel h1 a { color: #9cc0f0; text-decoration: none; }
+  .panel p { font-size: 12px; color: #9aa0b4; margin-top: 4px; line-height: 1.5; }
+  .panel .count { color: #ffce8a; font-weight: 600; }
+  .maplibregl-popup-content {
+    background: #121726; color: #fff; border-radius: 12px;
+    font-family: inherit; padding: 12px 14px;
+  }
+  .maplibregl-popup-tip { border-top-color: #121726 !important; border-bottom-color: #121726 !important; }
+  .popup .nm { font-weight: 650; font-size: 14px; }
+  .popup .slug {
+    font-family: ui-monospace, monospace; font-size: 12px; color: #ffce8a;
+    background: rgba(255,178,77,.12); padding: 2px 7px; border-radius: 6px;
+    display: inline-block; margin: 6px 0; cursor: pointer;
+  }
+  .popup .links a { font-size: 11px; color: #9cc0f0; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="panel">
+  <h1><a href="https://github.com/mirkokiefer/city-slugs">city-slugs</a></h1>
+  <p><span class="count" id="count">loading…</span> cities and towns, each with one
+  canonical slug. Click a dot — every slug deep-links into
+  <a href="https://zeit.xyz" style="color:#9cc0f0">Zeit, a world clock with live
+  skies</a>: local time, sun, moon, and weather per city.</p>
+</div>
+<div id="map"></div>
+<script>
+const map = new maplibregl.Map({
+  container: "map",
+  style: "https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json",
+  center: [10, 25],
+  zoom: 1.6,
+  attributionControl: { compact: true },
+});
+map.addControl(new maplibregl.NavigationControl({ showCompass: false }));
+
+map.on("load", async () => {
+  const rows = await fetch("data/city-slugs.min.json").then((r) => r.json());
+  document.getElementById("count").textContent = rows.length.toLocaleString();
+  const geojson = {
+    type: "FeatureCollection",
+    features: rows.map(([slug, name, lat, lng, pop]) => ({
+      type: "Feature",
+      geometry: { type: "Point", coordinates: [lng, lat] },
+      properties: { slug, name, pop },
+    })),
+  };
+  map.addSource("cities", { type: "geojson", data: geojson });
+  map.addLayer({
+    id: "cities",
+    type: "circle",
+    source: "cities",
+    paint: {
+      "circle-color": "#ffb24d",
+      "circle-opacity": [
+        "interpolate", ["linear"], ["get", "pop"],
+        500, 0.25, 100000, 0.55, 5000000, 0.9,
+      ],
+      "circle-radius": [
+        "interpolate", ["linear"], ["zoom"],
+        1, ["interpolate", ["linear"], ["get", "pop"], 500, 0.4, 1000000, 2.5, 25000000, 5],
+        8, ["interpolate", ["linear"], ["get", "pop"], 500, 2.5, 1000000, 9, 25000000, 16],
+      ],
+    },
+  });
+  map.on("click", "cities", (e) => {
+    const f = e.features[0];
+    const { slug, name, pop } = f.properties;
+    new maplibregl.Popup({ closeButton: false })
+      .setLngLat(f.geometry.coordinates)
+      .setHTML(`<div class="popup">
+        <div class="nm">${name}</div>
+        <div class="slug" onclick="navigator.clipboard.writeText('${slug}')" title="copy">${slug}</div>
+        <div class="links"><a href="https://zeit.xyz/?c=${slug}" target="_blank" rel="noopener">local time &amp; live sky on Zeit →</a></div>
+        <div style="font-size:10px;color:#6e7490;margin-top:4px">pop ${Number(pop).toLocaleString()}</div>
+      </div>`)
+      .addTo(map);
+  });
+  map.on("mouseenter", "cities", () => (map.getCanvas().style.cursor = "pointer"));
+  map.on("mouseleave", "cities", () => (map.getCanvas().style.cursor = ""));
+});
+</script>
+</body>
+</html>

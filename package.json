@@ -1,0 +1,19 @@
+{
+  "name": "city-slugs",
+  "version": "1.0.0",
+  "description": "Canonical URL-safe slugs for 233,819 cities and towns worldwide — assigned by population, shortest form first.",
+  "license": "CC-BY-4.0",
+  "repository": "github:mirkokiefer/city-slugs",
+  "homepage": "https://mirkokiefer.github.io/city-slugs/",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "data/city-slugs-1m.json",
+    "data/city-slugs-100k.json",
+    "data/city-slugs-15k.json"
+  ],
+  "keywords": ["cities", "slugs", "geonames", "geocoding", "timezone", "dataset", "gazetteer"]
+}
