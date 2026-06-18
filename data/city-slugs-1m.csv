@@ -1,6 +1,6 @@
 id,slug,name,country,region,timezone,lat,lng,population
 sha,shanghai,Shanghai,CN,,Asia/Shanghai,31.22,121.46,24874500
-bjs,beijing,Beijing,CN,,Asia/Shanghai,39.91,116.4,18960744
+pek,beijing,Beijing,CN,,Asia/Shanghai,39.91,116.4,18960744
 shenzhen,shenzhen,Shenzhen,CN,Guangdong,Asia/Shanghai,22.55,114.07,17494398
 can,guangzhou,Guangzhou,CN,,Asia/Shanghai,23.12,113.25,16096724
 kinshasa,kinshasa,Kinshasa,CD,,Africa/Kinshasa,-4.33,15.31,16000000
@@ -16,14 +16,14 @@ karachi,karachi,Karachi,PK,,Asia/Karachi,24.86,67.01,11624219
 tianjin,tianjin,Tianjin,CN,,Asia/Shanghai,39.14,117.18,11090314
 del,delhi,Delhi,IN,,Asia/Kolkata,28.65,77.23,11034555
 wuhan,wuhan,Wuhan,CN,,Asia/Shanghai,30.58,114.27,10392693
-mow,moscow,Moscow,RU,,Europe/Moscow,55.75,37.62,10381222
+moscow,moscow,Moscow,RU,,Europe/Moscow,55.75,37.62,10381222
 dhaka,dhaka,Dhaka,BD,,Asia/Dhaka,23.71,90.41,10356500
 sel,seoul,Seoul,KR,,Asia/Seoul,37.57,126.98,10349312
 tyo,tokyo,Tokyo,JP,,Asia/Tokyo,35.69,139.69,9733276
 dongguan,dongguan,Dongguan,CN,Guangdong,Asia/Shanghai,23.02,113.75,9644871
 cai,cairo,Cairo,EG,,Africa/Cairo,30.06,31.25,9606916
 xian,xian,Xi’an,CN,Shaanxi,Asia/Shanghai,34.26,108.93,9600000
-jnb,johannesburg,Johannesburg,ZA,,Africa/Johannesburg,-26.2,28.04,9418183
+johannesburg,johannesburg,Johannesburg,ZA,,Africa/Johannesburg,-26.2,28.04,9418183
 nanjing,nanjing,Nanjing,CN,Jiangsu,Asia/Shanghai,32.06,118.78,9314685
 hangzhou,hangzhou,Hangzhou,CN,,Asia/Shanghai,30.29,120.16,9236032
 foshan,foshan,Foshan,CN,Guangdong,Asia/Shanghai,23.03,113.13,9042509
@@ -60,7 +60,7 @@ hefei,hefei,Hefei,CN,,Asia/Shanghai,31.86,117.28,5050000
 dalian,dalian,Dalian,CN,Liaoning,Asia/Shanghai,38.91,121.6,4913879
 kano,kano,Kano,NG,,Africa/Lagos,12,8.52,4910000
 santiago,santiago,Santiago,CL,,America/Santiago,-33.46,-70.65,4837295
-cpt,capetown,Cape Town,ZA,,Africa/Johannesburg,-33.93,18.42,4772846
+capetown,capetown,Cape Town,ZA,,Africa/Johannesburg,-33.93,18.42,4772846
 peshawar,peshawar,Peshawar,PK,,Asia/Karachi,34.01,71.58,4758762
 changchun,changchun,Changchun,CN,Jilin,Asia/Shanghai,43.88,125.32,4714996
 jeddah,jeddah,Jeddah,SA,,Asia/Riyadh,21.49,39.19,4697000
@@ -71,7 +71,7 @@ surat,surat,Surat,IN,,Asia/Kolkata,21.2,72.83,4591246
 yangon,yangon,Yangon,MM,,Asia/Yangon,16.81,96.16,4477638
 baoan,baoan,Bao'an,CN,Guangdong,Asia/Shanghai,22.55,113.88,4476554
 kabul,kabul,Kabul,AF,,Asia/Kabul,34.53,69.17,4434550
-nbo,nairobi,Nairobi,KE,,Africa/Nairobi,-1.28,36.82,4397073
+nairobi,nairobi,Nairobi,KE,,Africa/Nairobi,-1.28,36.82,4397073
 wuxi,wuxi,Wuxi,CN,Jiangsu,Asia/Shanghai,31.57,120.29,4396835
 giza,giza,Giza,EG,,Africa/Cairo,30.01,31.21,4367343
 jinan,jinan,Jinan,CN,Shandong,Asia/Shanghai,36.67,117,4335989
@@ -127,7 +127,7 @@ bue,buenosaires,Buenos Aires,AR,,America/Argentina/Buenos_Aires,-34.61,-58.38,28
 haikou,haikou,Haikou,CN,Hainan,Asia/Shanghai,20.03,110.35,2873358
 taichung,taichung,Taichung,TW,,Asia/Taipei,24.15,120.68,2850285
 kanpur,kanpur,Kanpur,IN,,Asia/Kolkata,26.47,80.35,2823249
-yto,toronto,Toronto,CA,,America/Toronto,43.71,-79.4,2794356
+toronto,toronto,Toronto,CA,,America/Toronto,43.71,-79.4,2794356
 quito,quito,Quito,EC,,America/Guayaquil,-0.23,-78.52,2781641
 bne,brisbane,Brisbane,AU,,Australia/Brisbane,-27.47,153.03,2780063
 luanda,luanda,Luanda,AO,,Africa/Luanda,-8.84,13.23,2776168
@@ -251,7 +251,7 @@ jiangmen,jiangmen,Jiangmen,CN,,Asia/Shanghai,22.58,113.08,1795459
 benincity,benincity,Benin City,NG,,Africa/Lagos,6.34,5.63,1782000
 jiangyin,jiangyin,Jiangyin,CN,Jiangsu,Asia/Shanghai,31.91,120.26,1779515
 fuyang,fuyang,Fuyang,CN,Anhui,Asia/Shanghai,32.9,115.82,1768947
-ymq,montreal,Montréal,CA,,America/Toronto,45.51,-73.59,1762949
+montreal,montreal,Montréal,CA,,America/Toronto,45.51,-73.59,1762949
 bayannur,bayannur,Bayan Nur,CN,,Asia/Shanghai,40.74,107.39,1760000
 maracaibo,maracaibo,Maracaibo,VE,,America/Caracas,10.64,-71.61,1752602
 chaozhou,chaozhou,Chaozhou,CN,,Asia/Shanghai,23.65,116.62,1750945
@@ -318,7 +318,7 @@ kobe,kobe,Kobe,JP,,Asia/Tokyo,34.69,135.18,1525152
 sto,stockholm,Stockholm,SE,,Europe/Stockholm,59.33,18.07,1515017
 ciudadjuarez,ciudadjuarez,Ciudad Juárez,MX,,America/Ciudad_Juarez,31.72,-106.46,1512450
 cantho,cantho,Cần Thơ,VN,,Asia/Ho_Chi_Minh,10.04,105.79,1507187
-muc,munich,Munich,DE,,Europe/Berlin,48.14,11.58,1505005
+munich,munich,Munich,DE,,Europe/Berlin,48.14,11.58,1505005
 khulna,khulna,Khulna,BD,,Asia/Dhaka,22.81,89.56,1500689
 belem,belem,Belém,BR,Para,America/Belem,-1.46,-48.5,1499641
 yekaterinburg,yekaterinburg,Yekaterinburg,RU,,Asia/Yekaterinburg,56.86,60.62,1495066
