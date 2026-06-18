@@ -27,3 +27,12 @@ export function bySlug(tier = "15k") {
   }
   return cache.get(key);
 }
+
+/** Map of id -> city for a tier (short ids: ber, sf, nyc). */
+export function byId(tier = "15k") {
+  const key = "byId:" + tier;
+  if (!cache.has(key)) {
+    cache.set(key, new Map(cities(tier).map((c) => [c.id, c])));
+  }
+  return cache.get(key);
+}

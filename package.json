@@ -1,7 +1,7 @@
 {
   "name": "city-slugs",
-  "version": "1.0.0",
-  "description": "Canonical URL-safe slugs for 233,819 cities and towns worldwide — assigned by population, shortest form first.",
+  "version": "1.1.0",
+  "description": "Canonical URL-safe ids and slugs for 234,136 cities and towns worldwide — a short id (ber, sf, nyc) and a written slug (berlin), both unique, assigned by population.",
   "license": "CC-BY-4.0",
   "repository": "github:mirkokiefer/city-slugs",
   "homepage": "https://mirkokiefer.github.io/city-slugs/",
